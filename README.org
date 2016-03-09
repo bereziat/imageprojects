@@ -3,18 +3,19 @@ A startup file for my image processing student projects...
 * Installation
 ** Linux (Ubuntu/Debian)
    #+BEGIN_SRC sh
-$ sudo apt-get install liblib2-dev   
-$ git clone
+$ sudo apt-get install liblib2-dev git  
+$ git clone https://github.com/bereziat/imageprojects.git
    #+END_SRC
 ** MacOSX (Homebrew)
    First install [[http://www.xquartz.org/][Xquartz]], then:
    #+BEGIN_SRC sh
-$ curl ...
+$ curl /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 $ brew install imlib2
+$ git clone $ git clone https://github.com/bereziat/imageprojects.git
    #+END_SRC
 * Compiling and testing
   #+BEGIN_SRC sh
-$ cd 
+$ cd imageprojects
 $ make
 $ ./imlib-exemple olena.jpg out.jpg 120
 $ open out.jpg # MacOSX
