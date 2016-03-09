@@ -1,0 +1,22 @@
+A startup file for my image processing student projects...
+
+* Installation
+** Linux (Ubuntu/Debian)
+   #+BEGIN_SRC sh
+$ sudo apt-get install liblib2-dev   
+$ git clone
+   #+END_SRC
+** MacOSX (Homebrew)
+   First install [[http://www.xquartz.org/][Xquartz]], then:
+   #+BEGIN_SRC sh
+$ curl ...
+$ brew install imlib2
+   #+END_SRC
+* Compiling and testing
+  #+BEGIN_SRC sh
+$ cd 
+$ make
+$ ./imlib-exemple olena.jpg out.jpg 120
+$ open out.jpg # MacOSX
+$ xdg-open out.jpg # Linux  
+  #+END_SRC
