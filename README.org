@@ -14,10 +14,13 @@ $ brew install imlib2
 $ git clone $ git clone https://github.com/bereziat/imageprojects.git
    #+END_SRC
 * Compiling and testing
+** imlib
   #+BEGIN_SRC sh
-$ cd imageprojects
+$ cd imageprojects/imlib
 $ make
 $ ./imlib-exemple olena.jpg out.jpg 120
 $ open out.jpg # MacOSX
 $ xdg-open out.jpg # Linux  
   #+END_SRC
+** opticflow
+   TODO
