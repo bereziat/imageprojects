@@ -92,7 +92,6 @@ void write_grayscale(char *fname, int dimx, int dimy, unsigned char *buf)
     free( data);
 }
 
-
 /*
  * Un exemple d'utilisation des deux fonctions précédentes.
  */
@@ -146,3 +145,44 @@ void process_image (unsigned char *buf_out, unsigned char *buf_in, int dimx, int
   
 }
 
+/**
+ * Ecrit une image couleur (rgb) sur le disque. L'extension du nom de fichier
+ * donne le format: Par exemple: toto.jpg -> l'image sera écrite
+ * au format Jpeg.
+ */
+
+void write_color(char *fname, int dimx, int dimy, unsigned char *R, unsigned char *G, unsigned char *B) {
+  Imlib_Image *image;
+  unsigned char *data;
+  char *ext;
+  int l;
+  
+  if( !(ext = strchr( fname, '.'))) {
+    fprintf( stderr, "Erreur: format image non reconnu\n");
+    exit(34);
+  }
+  
+  data = (unsigned char *)malloc(sizeof(char)*dimx*dimy*4);
+  if( !buf) {
+    fprintf( stderr, "Erreur: plus de memoire libre (allocation de %ld octets).\n",
+	     dimx*dimy*sizeof(float));
+    exit(36);
+  }
+  for( l=0; l<dimy; l++) {
+    int c;
+    for( c=0; c<dimx; c++) {
+      *data = *R++;
+      *(data+1)= *G++;
+      *(data+2) = *B++;
+      *(data+3) = 0;
+      data += 4;
+    }
+  }
+  data -= dimx*dimy*4;
+  image = imlib_create_image_using_data( dimx, dimy, (DATA32*)data);
+  imlib_context_set_image( image);
+  imlib_image_set_format( ext+1);
+  imlib_save_image( fname);
+  imlib_free_image();
+  free( data);  
+}
