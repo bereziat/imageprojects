@@ -2,8 +2,6 @@
 #include "colorcode.h"
 #include "utils.h"
 
-#include <inrimage/image.h>
-
 int main( int argc, char **argv) {
   if( argc > 2) {
     float *vel;

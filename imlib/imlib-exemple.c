@@ -163,7 +163,7 @@ void write_color(char *fname, int dimx, int dimy, unsigned char *R, unsigned cha
   }
   
   data = (unsigned char *)malloc(sizeof(char)*dimx*dimy*4);
-  if( !buf) {
+  if( !data) {
     fprintf( stderr, "Erreur: plus de memoire libre (allocation de %ld octets).\n",
 	     dimx*dimy*sizeof(float));
     exit(36);

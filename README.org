@@ -3,7 +3,7 @@ A startup file for my image processing student projects...
 * Installation
 ** Linux (Ubuntu/Debian)
    #+BEGIN_SRC sh
-$ sudo apt-get install liblib2-dev git  
+$ sudo apt-get install libimlib2-dev git  
 $ git clone https://github.com/bereziat/imageprojects.git
    #+END_SRC
 ** MacOSX (Homebrew)
